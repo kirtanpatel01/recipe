@@ -36,6 +36,7 @@ function Recipe() {
 
     }
   };
+
   useEffect(() => {
     if (id) fetchRecipeDetails();
   }, [id]);
@@ -65,7 +66,7 @@ function Recipe() {
             <button
               onClick={handleDelete}
               disabled={isPending}
-              className={`h-fit mx-4 px-4 py-2 rounded-md bg-red-400/30 hover:bg-red-400 border border-red-600 cursor-pointer ${isPending ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+              className={`h-fit mx-4 px-4 py-2 rounded-md bg-red-400/30 hover:bg-red-400 border border-red-600 ${isPending ? 'cursor-not-allowed' : 'cursor-pointer'}`}
             >
               Delete
             </button>
@@ -73,7 +74,7 @@ function Recipe() {
         )}
       </header>
 
-      <div className="grid grid-rows-2  xl:grid-rows-1 grid-cols-1 xl:grid-cols-[0.25fr_.75fr_1fr] gap-8 bg-white rounded-xl shadow-md p-8">
+      <div className="grid grid-rows-2 xl:grid-rows-1 grid-cols-1 xl:grid-cols-[0.25fr_.75fr_1fr] gap-8 bg-white rounded-xl shadow-md p-8">
         <div className="h-fit flex flex-col gap-4 bg-slate-400/20 border border-slate-300 rounded-md shadow-md p-4">
           <span className="text-2xl font-semibold">{recipe.title}</span>
           <span className="">{recipe.category}</span>

@@ -169,7 +169,7 @@ function AddRecipe() {
               placeholder="Enter a step..."
               value={instruction}
               onChange={(e) => setInstruction(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && handleAddInstruction()} // Handle Enter key
+              onKeyDown={(e) => e.key === "Enter" && handleAddInstruction()}
             />
             <button
               onClick={handleAddInstruction}

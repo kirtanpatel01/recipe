@@ -5,7 +5,8 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 
 const options = {
     httpOnly: true,
-    secure: true
+    secure: process.env.NODE_ENV === "production",  // Secure only in production
+    sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax"
 }
 
 const generateAccessAndRefreshTokens = async(userId) => {
